@@ -58,14 +58,12 @@ def open_app(icon, item):
         pass
 
 
-def quit_tray(icon, item):
-    icon.stop()
-
-
 def main():
+    # No "Quit" item on purpose — the tray icon can't be closed from its menu,
+    # so it stays as a running indicator. (It can still be ended from Task
+    # Manager by an admin; this just removes the easy one-click quit.)
     menu = pystray.Menu(
         pystray.MenuItem("Open Game Blocker", open_app, default=True),
-        pystray.MenuItem("Quit", quit_tray),
     )
     pystray.Icon("GameBlocker", _icon_image(), "Game Blocker — running", menu).run()
 

@@ -157,7 +157,8 @@ export default function App() {
   }
   const removeGame = async (i) => { if (!(await guardEdit())) return; await api.removeGame(i); await refresh() }
   const doScan = async () => {
-    if (!(await guardEdit())) return
+    // Scanning only finds installed games to block (never weakens the block),
+    // so it needs no family code — unlike manual Add/Remove.
     const found = await api.scan()
     const existing = new Set(state.blocklist.map((g) => g.toLowerCase()))
     const fresh = found.filter((g) => !existing.has(g.toLowerCase()))
