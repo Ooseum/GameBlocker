@@ -1,0 +1,6 @@
+psutil>=5.9
+pywin32>=306
+pywebview>=5.0
+pystray>=0.19
+pillow>=10.0
+pyinstaller>=6.0

@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# PyInstaller build output
+/build/
+/dist/
+/Output/
+*.exe
+
+# Node
+frontend/node_modules/
+
+# Scratch / staging
+Claude outputs/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Keep: frontend/dist (the built React UI, so the app runs without Node)
